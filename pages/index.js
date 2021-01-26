@@ -26,7 +26,7 @@ export const QuizContainer = styled.div`
     margin: auto;
     padding: 15px;
   }
-`;git
+`;
 
 export default function Home() {
   return (
