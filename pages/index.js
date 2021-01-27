@@ -5,32 +5,18 @@ import QuizLogo from '../src/components/QuizLogo'
 import QuizBackground from '../src/components/QuizBackground'
 import Footer from '../src/components/Footer'
 import GitHubCorner from '../src/components/GitHubCorner'
-
-const Title = styled.h1`
-  font-size: 50px;
-  color: ${({ theme }) => theme.colors.primary};
-`
-const BackgroundImage = styled.div`
-  background-image: url(${db.bg});
-  flex: 1;
-  background-size: cover;
-  background-position: center;
-`;
-
-export const QuizContainer = styled.div`
-  width: 100%;
-  max-width: 350px;
-  padding-top: 45px;
-  margin: auto 10%;
-  @media screen and (max-width: 500px) {
-    margin: auto;
-    padding: 15px;
-  }
-`;
+import QuizContainer from '../src/components/GuizContainer'
+import Head from 'next/head'
 
 export default function Home() {
   return (
     <QuizBackground backgroundImage={db.bg}>
+      <Head>
+      <meta charSet="utf-8" />
+      <meta name="viewport" content="viewport-fit=cover" />
+      </Head>
+      
+        
       <QuizContainer>
         <QuizLogo />
         <Widget>
