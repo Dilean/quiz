@@ -1,6 +1,5 @@
 /* eslint-disable func-names */
 import React from 'react';
-import styled from 'styled-components';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import db from '../db.json';
@@ -9,7 +8,9 @@ import QuizLogo from '../src/components/QuizLogo';
 import QuizBackground from '../src/components/QuizBackground';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
-import QuizContainer from '../src/components/GuizContainer';
+import QuizContainer from '../src/components/QuizContainer';
+import Input from '../src/components/Input';
+import Button from '../src/components/Button';
 
 export default function Home() {
   const router = useRouter();
@@ -33,17 +34,15 @@ export default function Home() {
               router.push(`/quiz?name=${name}`);
             }}
             >
-              <input
-                onChange={function (infosDoEvento) {
-                  // Stage
-                  setName(infosDoEvento.target.value);
-                }}
+              <Input
+                name="NomeDoUsuario"
+                onChange={(infosDoEvento) => setName(infosDoEvento.target.value)}
                 placeholder="Diz ai seu nome"
+                value={name}
               />
-              <button type="submit" disabled={name.length === 0}>
-                Jogar
-                {name}
-              </button>
+              <Button type="submit" disabled={name.length === 0}>
+                {` Jogar ${name}`}
+              </Button>
             </form>
           </Widget.Content>
         </Widget>
